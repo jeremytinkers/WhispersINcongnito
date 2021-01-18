@@ -4,6 +4,7 @@ const express=require('express');
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const mongoose= require("mongoose");
+const md5= require("md5");
 require("dotenv").config();
 var encrypt= require('mongoose-encryption');
 
@@ -40,7 +41,7 @@ app.get("/login", function(req, res){
 app.post("/register", function(req, res){
 
 var email1=req.body.username;
-var password1=req.body.password;
+var password1=md5(req.body.password);
 
 const user1 = new User({
   email:email1, password:password1
@@ -58,7 +59,7 @@ user1.save(function(err){
 app.post("/login", function(req, res){
 
 var email1=req.body.username;
-var password1=req.body.password;
+var password1=md5(req.body.password);
 
 User.findOne({email:email1}, function(err,data){
 console.log(data);
