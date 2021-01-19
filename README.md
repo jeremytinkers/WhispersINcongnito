@@ -12,7 +12,7 @@ If running locally then,  then
 >* Clone the repo
 >* cd to the downloaded location
 >* Run npm i to install the required dependencies
->* Enter node server.js to get the server up and running!
+>* Enter node app.js to get the server up and running!
 ---
 
 Modeled off the popular chinese whisper app where users can share their cumbering secrets anonymously. 
